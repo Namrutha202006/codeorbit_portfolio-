@@ -1,347 +1,235 @@
-/* General Settings */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background: #f5f7fa;
-    color: #222;
-}
 
-
-/* Navigation Bar */
-
-header {
-    background: #102a43;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar {
-    max-width: 1100px;
-    margin: auto;
-    padding: 18px 20px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    color: white;
-    font-size: 25px;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.nav-links a:hover {
-    color: #61dafb;
-}
-
-.menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 25px;
-    cursor: pointer;
-}
-
-
-/* Home */
-
-.home {
-    min-height: 90vh;
+    min-height: 100vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
+    background: linear-gradient(135deg, #dbeafe, #f8fafc);
+
+    padding: 20px;
+}
+
+
+/* Main Container */
+
+.container {
+    width: 100%;
+    max-width: 650px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Heading */
+
+h1 {
     text-align: center;
 
-    padding: 40px 20px;
-
-    background: linear-gradient(135deg, #dff6ff, #ffffff);
-}
-
-.home-content {
-    max-width: 700px;
-}
-
-.welcome {
-    font-size: 20px;
-    color: #2563eb;
-}
-
-.home h1 {
-    font-size: 60px;
     color: #102a43;
-    margin: 10px 0;
+
+    margin-bottom: 8px;
 }
 
-.home h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
+.subtitle {
+    text-align: center;
+
+    color: #64748b;
+
+    margin-bottom: 25px;
 }
 
-.home p {
-    font-size: 18px;
+
+/* Input Section */
+
+.input-section {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+#taskInput {
+    flex: 1;
+
+    padding: 13px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 7px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+#taskInput:focus {
+    border-color: #2563eb;
 }
 
 
-/* Button */
+/* Add Button */
 
-.btn {
-    display: inline-block;
+.input-section button {
+    padding: 13px 20px;
 
-    margin-top: 25px;
+    border: none;
 
-    padding: 12px 25px;
+    border-radius: 7px;
 
     background: #2563eb;
+
     color: white;
 
-    text-decoration: none;
+    font-size: 15px;
 
-    border-radius: 6px;
-
-    transition: 0.3s;
+    cursor: pointer;
 }
 
-.btn:hover {
-    background: #102a43;
-}
-
-
-/* Common Section */
-
-.section {
-    max-width: 1100px;
-    margin: auto;
-
-    padding: 80px 20px;
-}
-
-.section-title {
-    text-align: center;
-
-    font-size: 32px;
-
-    margin-bottom: 40px;
-
-    color: #102a43;
+.input-section button:hover {
+    background: #1d4ed8;
 }
 
 
-/* About */
+/* Task List */
 
-.about-content {
-    max-width: 800px;
-
-    margin: auto;
-
-    text-align: center;
-
-    font-size: 18px;
-}
-
-.about-content p {
-    margin-bottom: 20px;
+#taskList {
+    list-style: none;
 }
 
 
-/* Skills */
+/* Individual Task */
 
-.skills-container {
-    display: grid;
+.task {
+    display: flex;
 
-    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
 
-    gap: 20px;
-}
+    gap: 10px;
 
-.skill-card {
-    background: white;
-
-    padding: 30px 20px;
-
-    text-align: center;
-
-    border-radius: 10px;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-    transition: 0.3s;
-}
-
-.skill-card:hover {
-    transform: translateY(-5px);
-}
-
-.skill-card h3 {
-    color: #2563eb;
+    padding: 14px;
 
     margin-bottom: 10px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 8px;
 }
 
 
-/* Projects */
+/* Task Text */
 
-.projects-container {
-    display: grid;
+.task-text {
+    flex: 1;
 
-    grid-template-columns: repeat(3, 1fr);
+    font-size: 16px;
 
-    gap: 20px;
+    word-break: break-word;
 }
 
-.project-card {
-    background: white;
 
-    padding: 25px;
+/* Completed Task */
 
-    border-radius: 10px;
+.task.completed .task-text {
+    text-decoration: line-through;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-    transition: 0.3s;
+    color: #94a3b8;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-}
 
-.project-card h3 {
-    color: #102a43;
+/* Buttons */
 
-    margin-bottom: 15px;
-}
+.edit-btn,
+.delete-btn {
+    border: none;
 
-.project-card span {
-    display: inline-block;
-
-    margin-top: 15px;
-
-    padding: 5px 10px;
-
-    background: #e0f2fe;
-
-    color: #0369a1;
+    padding: 7px 10px;
 
     border-radius: 5px;
 
-    font-size: 14px;
-}
-
-
-/* Contact */
-
-.contact {
-    text-align: center;
-}
-
-.contact-info {
-    margin-top: 25px;
-}
-
-.contact-info p {
-    margin: 12px;
-}
-
-.contact-info a {
-    color: #2563eb;
-
-    text-decoration: none;
-}
-
-
-/* Footer */
-
-footer {
-    background: #102a43;
-
     color: white;
 
+    cursor: pointer;
+}
+
+.edit-btn {
+    background: #f59e0b;
+}
+
+.edit-btn:hover {
+    background: #d97706;
+}
+
+.delete-btn {
+    background: #ef4444;
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+}
+
+
+/* Checkbox */
+
+.task-checkbox {
+    width: 18px;
+
+    height: 18px;
+
+    cursor: pointer;
+}
+
+
+/* Task Counter */
+
+.task-info {
     text-align: center;
 
-    padding: 25px;
+    margin-top: 20px;
+
+    color: #64748b;
 }
 
-footer p {
-    margin: 5px;
-}
 
+/* Mobile Design */
 
-/* Mobile Responsive Design */
+@media (max-width: 600px) {
 
-@media (max-width: 768px) {
+    .container {
+        padding: 25px 18px;
+    }
 
-    .nav-links {
-        display: none;
-
-        position: absolute;
-
-        top: 65px;
-        left: 0;
-
-        width: 100%;
-
-        background: #102a43;
-
+    .input-section {
         flex-direction: column;
-
-        text-align: center;
-
-        padding: 20px;
     }
 
-    .nav-links.active {
-        display: flex;
+    .input-section button {
+        width: 100%;
     }
 
-    .menu-btn {
-        display: block;
+    .task {
+        flex-wrap: wrap;
     }
 
-
-    .home h1 {
-        font-size: 42px;
-    }
-
-    .home h2 {
-        font-size: 22px;
-    }
-
-
-    .skills-container {
-        grid-template-columns: 1fr;
-    }
-
-
-    .projects-container {
-        grid-template-columns: 1fr;
-    }
-
-
-    .section {
-        padding: 60px 20px;
+    .task-text {
+        width: 100%;
     }
 
 }
